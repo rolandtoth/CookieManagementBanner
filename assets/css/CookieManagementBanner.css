@@ -1,6 +1,4 @@
-.pwcmb {
-    box-sizing: border-box;
-}
+.pwcmb,
 .pwcmb * {
     box-sizing: border-box;
 }
@@ -11,12 +9,12 @@
     background: white;
     width: 100%;
     left: 0;
-    transition: top 0.25s;
+    transition: top 0.5s;
 }
 
 .js-show.pwcmb--top_overlay,
 .js-show.pwcmb--top_push {
-    top: 0px;
+    top: 0;
 }
 
 .pwcmb--bottom_overlay {
@@ -24,14 +22,14 @@
 }
 
 .js-show.pwcmb--bottom_overlay {
-    bottom: 0px;
+    bottom: 0;
 }
 
 .pwcmb-widget {
     position: absolute;
     width: 100%;
     padding: 20px;
-    transition: 0.25s;
+    transition: 0.5s;
     background: whitesmoke;
 }
 
@@ -50,14 +48,16 @@
 }
 
 .pwcmb-widget__close::before {
-    content: '×';
+    content: '\00d7'; /* multiplication sign */
     visibility: visible;
-    display: block;
+    display: inline-block;
     position: absolute;
-    top: 0;
-    right: 10px;
+    top: 5px;
+    right: 12px;
     font-size: 30px;
+    line-height: 1;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .pwcmb-widget__copy {
@@ -68,7 +68,7 @@
     font-weight: bold;
 }
 
-.pwcmb-widget__row-label { font-weight: bold; }
+.pwcmb-widget__row-label { font-weight: bold; user-select: none; cursor: pointer; }
 .pwcmb-widget__row-text { display: inline; }
 .pwcmb-widget__row-text:before { content: ' - '; }
 
@@ -78,6 +78,8 @@
 
 .pwcmb-widget button {
     white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
 }
 
 .js-pwcmb-notice-toggle {
@@ -115,5 +117,4 @@
     .pwcmb-widget__actions {
         margin-left: auto;
     }
-
 }
